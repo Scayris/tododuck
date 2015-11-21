@@ -1,3 +1,9 @@
+.user-text {
+	color: #757575;
+	font-size: 16px;
+	margin-top: -24px;
+	margin-bottom: -20px;
+}
 .page-content {
 	padding: 5px;
 }
@@ -5,9 +11,10 @@
 
 .card-task.mdl-card {
 	width: 100%;
-	min-height: 90px;	/* needed because defined 200 by default */
-	height: 10px;
+	min-height: 96px;	/* needed because defined 200 by default */
+	height: 96px;
 	background: #009688;
+	margin-bottom: 8px;
 }
 .card-task > .mdl-card__actions {
 	border-color: rgba(255, 255, 255, 0.2);
@@ -20,7 +27,7 @@
 }
 .card-task > .mdl-card__actions {
 	display: flex;
-	box-sizing:border-box;
+	box-sizing: border-box;
 	align-items: center;
 }
 .card-task > .mdl-card__title,
@@ -28,14 +35,41 @@
 .card-task > .mdl-card__actions > .mdl-button {
 	color: #fff;
 }
+
+.task-content {
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.urgency-holder{
+	width: 20px;
+	height: 20px;
+	
+	border-style: solid;
+	border-color: #ffffff;
+	border-width: 2px;
+	border-radius: 15px;
+	
+	text-align: center;
+	font-size: 19px;
+	
+	background-color: #827717;
+}
 .time-holder {
-	font-size:14px;
+	font-size: 14px;
 }
 
+#add-task {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	padding: 12px;
+	z-index: 5;
+}
 
 /* Header menu button edits. Needed because div is prototyped & can't be edited without JS */
 .mdl-layout__drawer-button > .material-icons {
-	visibility:hidden;	/* get rid of the MENU text */
+	visibility: hidden;	/* get rid of the MENU text */
 }
 .mdl-layout__drawer-button {	/* entire icon code */
 	background-position: 0 -96px;
@@ -43,7 +77,7 @@
 	background-image: url(../assets/svg-sprite.svg);
 	width: 24px;
 	height: 24px;
-	margin:16px !important;	/* ignored unless important */
+	margin: 16px !important;	/* ignored unless important */
 }
 
 /*
@@ -85,8 +119,20 @@
 	background-image: url(../assets/svg-sprite.svg);
 }
 
-.svg-ic_place_24px {
+.svg-ic_warning_24px {
 	background-position: 0 -168px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_place_24px {
+	background-position: 0 -192px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_add_24px {
+	background-position: 0 -216px;
 	background-repeat: no-repeat;
 	background-image: url(../assets/svg-sprite.svg);
 }
@@ -94,10 +140,12 @@
 /*
  * svg sprite size & margin handling
  */
-.svg-ic_done_24px-dims { width: 24px; height: 24px; margin:4px; }
-.svg-ic_check_circle_24px-dims { width: 24px; height: 24px; margin:4px; }
-.svg-ic_settings_24px-dims { width: 24px; height: 24px; margin:4px; }
-.svg-ic_arrow_back_24px-dims { width: 24px; height: 24px; margin:4px; }
-.svg-ic_search_24px-dims { width: 24px; height: 24px; margin:4px; }
-.svg-ic_time_24px-dims { width: 24px; height: 24px; margin:4px; }
-.svg-ic_place_24px-dims { width: 24px; height: 24px; margin:4px; }
+.svg-ic_done_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_check_circle_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_settings_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_arrow_back_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_search_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_time_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_warning_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_place_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_add_24px-dims { width: 24px; height: 24px; margin: 4px; }

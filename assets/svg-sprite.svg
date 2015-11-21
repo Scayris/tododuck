@@ -41,8 +41,8 @@
      id="namedview501"
      showgrid="false"
      inkscape:zoom="10.920389"
-     inkscape:cx="12.892103"
-     inkscape:cy="3742.1892"
+     inkscape:cx="7.2176796"
+     inkscape:cy="3698.0136"
      inkscape:window-x="960"
      inkscape:window-y="24"
      inkscape:window-maximized="0"
@@ -85,6 +85,16 @@
   <path
      style="fill:#ffffff"
      id="path298"
-     d="m 12,170 c -3.87,0 -7,3.13 -7,7 0,5.25 7,13 7,13 0,0 7,-7.75 7,-13 0,-3.87 -3.13,-7 -7,-7 z m 0,9.5 c -1.38,0 -2.5,-1.12 -2.5,-2.5 0,-1.38 1.12,-2.5 2.5,-2.5 1.38,0 2.5,1.12 2.5,2.5 0,1.38 -1.12,2.5 -2.5,2.5 z"
+     d="m 12,194 c -3.87,0 -7,3.13 -7,7 0,5.25 7,13 7,13 0,0 7,-7.75 7,-13 0,-3.87 -3.13,-7 -7,-7 z m 0,9.5 c -1.38,0 -2.5,-1.12 -2.5,-2.5 0,-1.38 1.12,-2.5 2.5,-2.5 1.38,0 2.5,1.12 2.5,2.5 0,1.38 -1.12,2.5 -2.5,2.5 z"
      inkscape:connector-curvature="0" />
+  <path
+     id="path292"
+     d="m 1,189 22,0 -11,-19 -11,19 z m 12,-3 -2,0 0,-2 2,0 0,2 z m 0,-4 -2,0 0,-4 2,0 0,4 z"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff" />
+  <path
+     id="path5"
+     d="m 19,229 -6,0 0,6 -2,0 0,-6 -6,0 0,-2 6,0 0,-6 2,0 0,6 6,0 0,2 z"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff" />
 </svg>

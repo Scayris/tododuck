@@ -1,9 +1,9 @@
 <html>
 	<head>
 		<title>ToDoDuck</title>
+		<link rel="shortcut icon" href="assets/Logo.ico" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./assets/svg-sprite.css">
 		<link rel="stylesheet" href="./style/material.min.css" type="text/css">
 		<link rel="stylesheet" href="./style/tododuck.css" type="text/css">
 		<script src="./scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
@@ -31,11 +31,16 @@
 			</header>
 			<div class="mdl-layout__drawer">
 			<span class="mdl-layout-title">ToDoDuck</span>
-			<nav class="mdl-navigation">
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
+			<span class="mdl-layout-title user-text">Welcome, <span id="username">User</span>.</span>
+			<nav id="options" class="mdl-navigation">
+				<a class="mdl-navigation__link" href="">Preferences</a>
+				<a class="mdl-navigation__link" href="index.html">Log Out</a>
+			</nav>
+			<nav id="category-list" class="mdl-navigation">
+				<a class="mdl-navigation__link" href="">Work</a>
+				<a class="mdl-navigation__link" href="">Studies</a>
+				<a class="mdl-navigation__link" href="">Hobbies</a>
+				<a class="mdl-navigation__link" href="">Travel</a>
 			</nav>
 			</div>
 			<main class="mdl-layout__content">
@@ -43,24 +48,36 @@
 				<!-- Task list -->
 				<div class="card-task mdl-card mdl-shadow--2dp">
 					<div class="mdl-card__title mdl-card--expand task-content">
-						May 24, 2016
+						Do that thing you were supposed to do.
 					</div>
 					<div class="mdl-card__actions mdl-card--border">
-						<div class="time-holder">
-							Add to Calendar
+						<div class="urgency-holder">
+							3
 						</div>
-					<div class="mdl-layout-spacer"></div>
-					<label class="mdl-button mdl-js-button mdl-button--icon">
-						<div class="svg-ic_place_24px svg-ic_place_24px-dims"></div>
-					</label>
-					<label class="mdl-button mdl-js-button mdl-button--icon">
-						<div class="svg-ic_settings_24px svg-ic_settings_24px-dims"></div>
-					</label>
-					<label class="mdl-button mdl-js-button mdl-button--icon">
-						<div class="svg-ic_done_24px svg-ic_done_24px-dims"></div>
-					</label>
-				  </div>
+						&nbsp;
+						<p>
+							<div class="svg-ic_warning_24px svg-ic_warning_24px-dims date-warning"></div>
+							&nbsp;
+							<div class="time-holder">2.10.2015 - 4.11.2015</div>
+						</p>
+						
+						<div class="mdl-layout-spacer"></div>
+						
+						<a href="http://maps.google.com/?q=vecna+pot+113" target="_blank" class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_place_24px svg-ic_place_24px-dims"></div>
+						</a>
+						<label class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_settings_24px svg-ic_settings_24px-dims"></div>
+						</label>
+						<label class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_done_24px svg-ic_done_24px-dims"></div>
+						</label>
+					</div>
 				</div>
+				
+				<button id="add-task" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp">
+					<div class="svg-ic_add_24px svg-ic_add_24px-dims"></div>
+				</button>
 			</div>
 			</main>
 		</div>
