@@ -1,0 +1,103 @@
+.page-content {
+	padding: 5px;
+}
+
+
+.card-task.mdl-card {
+	width: 100%;
+	min-height: 90px;	/* needed because defined 200 by default */
+	height: 10px;
+	background: #009688;
+}
+.card-task > .mdl-card__actions {
+	border-color: rgba(255, 255, 255, 0.2);
+}
+.card-task > .mdl-card__title {
+	align-items: flex-start;
+}
+.card-task > .mdl-card__title > h4 {
+	margin-top: 0;
+}
+.card-task > .mdl-card__actions {
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+}
+.card-task > .mdl-card__title,
+.card-task > .mdl-card__actions,
+.card-task > .mdl-card__actions > .mdl-button {
+	color: #fff;
+}
+.time-holder {
+	font-size:14px;
+}
+
+
+/* Header menu button edits. Needed because div is prototyped & can't be edited without JS */
+.mdl-layout__drawer-button > .material-icons {
+	visibility:hidden;	/* get rid of the MENU text */
+}
+.mdl-layout__drawer-button {	/* entire icon code */
+	background-position: 0 -96px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+	width: 24px;
+	height: 24px;
+	margin:16px !important;	/* ignored unless important */
+}
+
+/*
+ *  svg sprite position handling
+ */
+.svg-ic_done_24px {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_check_circle_24px {
+	background-position: 0 -24px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_settings_24px {
+	background-position: 0 -48px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_arrow_back_24px {
+	background-position: 0 -72px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_search_24px {
+	background-position: 0 -120px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_time_24px {
+	background-position: 0 -144px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+.svg-ic_place_24px {
+	background-position: 0 -168px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
+/*
+ * svg sprite size & margin handling
+ */
+.svg-ic_done_24px-dims { width: 24px; height: 24px; margin:4px; }
+.svg-ic_check_circle_24px-dims { width: 24px; height: 24px; margin:4px; }
+.svg-ic_settings_24px-dims { width: 24px; height: 24px; margin:4px; }
+.svg-ic_arrow_back_24px-dims { width: 24px; height: 24px; margin:4px; }
+.svg-ic_search_24px-dims { width: 24px; height: 24px; margin:4px; }
+.svg-ic_time_24px-dims { width: 24px; height: 24px; margin:4px; }
+.svg-ic_place_24px-dims { width: 24px; height: 24px; margin:4px; }
