@@ -24,11 +24,55 @@
 			</form>
 			<div class="mdl-card__actions">
 				<a class="login-buttons mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-				Register
+					Register
 				</a>
 				<a id="login" class="login-buttons mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect"
 					href="tododuck.html">
 					Login
+				</a>
+			</div>
+		</div>
+		<div id="registration-overlay" class=""></div>
+		<div id="registration" class="mdl-card mdl-shadow--8dp">
+			<div class="mdl-card__title">
+				<h6 class="mdl-card__title-text">Register</h6>
+				<div class="mdl-layout-spacer"></div>
+				<label class="mdl-button mdl-js-button mdl-button--icon">
+					<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
+				</label>
+			</div>
+			<div class="mdl-card__supporting-text mdl-card--expand">
+				<div class="mdl-textfield mdl-js-textfield email-holder">
+					<input class="mdl-textfield__input" type="email" id="email">
+					<label class="mdl-textfield__label" for="email">Email...</label>
+				</div>
+				
+				<div class="mdl-textfield mdl-js-textfield desired-username-holder">
+					<input class="mdl-textfield__input" type="text" id="desired-username">
+					<label class="mdl-textfield__label" for="desired-username">Display name...</label>
+				</div>
+				
+				<div class="mdl-textfield mdl-js-textfield desired-password-holder">
+					<input class="mdl-textfield__input" type="password" id="desired-password">
+					<label class="mdl-textfield__label" for="desired-password">Password...</label>
+				</div>
+				
+				<div class="mdl-textfield mdl-js-textfield desired-password-holder-2">
+					<input class="mdl-textfield__input" type="password" id="desired-password-2">
+					<label class="mdl-textfield__label" for="desired-password-2">Repeat password...</label>
+				</div>
+				
+				<div id="mail-check">
+					That email is already registered.
+				</div>
+				<div id="pass-check">
+					Passwords do not match.
+				</div>
+			</div>
+			<div class="mdl-card__actions mdl-card--border">
+				<div class="mdl-layout-spacer"></div>
+				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					Confirm
 				</a>
 			</div>
 		</div>
