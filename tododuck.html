@@ -32,7 +32,6 @@
 			<span class="mdl-layout-title">ToDoDuck</span>
 			<span class="mdl-layout-title user-text">Welcome, <span id="username">User</span>.</span>
 			<nav id="options" class="mdl-navigation">
-				<a class="mdl-navigation__link" href="">Preferences</a>
 				<a class="mdl-navigation__link" href="index.html">Log Out</a>
 			</nav>
 			<nav id="macro-control" class="mdl-navigation">
@@ -120,8 +119,9 @@
 				</div>
 				
 				<div class="mdl-textfield mdl-js-textfield deadline-holder">
-					<input class="mdl-textfield__input" type="text" id="deadline">
+					<input class="mdl-textfield__input" type="text" pattern="(\d{1,2})\/(\d{1,2})\/(\d{4})" id="deadline">
 					<label class="mdl-textfield__label" for="deadline">Deadline...</label>
+					<span class="mdl-textfield__error">Format: DD/MM/YYYY</span>
 				</div>
 				
 				<div class="mdl-textfield mdl-js-textfield place-holder">
