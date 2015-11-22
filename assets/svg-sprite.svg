@@ -42,7 +42,7 @@
      showgrid="false"
      inkscape:zoom="10.920389"
      inkscape:cx="7.2176796"
-     inkscape:cy="3698.0136"
+     inkscape:cy="3673.7095"
      inkscape:window-x="960"
      inkscape:window-y="24"
      inkscape:window-maximized="0"
@@ -95,6 +95,11 @@
   <path
      id="path5"
      d="m 19,229 -6,0 0,6 -2,0 0,-6 -6,0 0,-2 6,0 0,-6 2,0 0,6 6,0 0,2 z"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff" />
+  <path
+     id="path26"
+     d="M 19,246.41 17.59,245 12,250.59 6.41,245 5,246.41 10.59,252 5,257.59 6.41,259 12,253.41 17.59,259 19,257.59 13.41,252 Z"
      inkscape:connector-curvature="0"
      style="fill:#ffffff" />
 </svg>

@@ -5,6 +5,8 @@
 	margin-bottom: -20px;
 }
 .page-content {
+	position: relative;
+	height: 100%;
 	padding: 5px;
 }
 
@@ -49,22 +51,75 @@
 	border-color: #ffffff;
 	border-width: 2px;
 	border-radius: 15px;
+	margin-right: 2px;
 	
 	text-align: center;
 	font-size: 19px;
 	
 	background-color: #827717;
 }
+.date-warning {
+	margin-right: 8px !important;
+}
 .time-holder {
 	font-size: 14px;
 }
 
+/* add task FAB */
 #add-task {
 	position: fixed;
 	right: 30px;
 	bottom: 30px;
 	padding: 12px;
 	z-index: 5;
+}
+
+/*
+ * Task editor
+ */
+#task-editor-overlay {
+	margin: 0px auto;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	position: absolute;
+	background-color: #000;
+	opacity: 0.6;
+}
+#task-editor.mdl-card {
+	margin: 0px auto;
+	width: 320px;
+	height: 355px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 15;
+	transform: translate(-50%, -50%);
+}
+#task-editor > .mdl-card__title {
+	color: #fff;
+	background-color: #009688;
+}
+#task-editor > .mdl-card__actions {
+	display: flex;
+}
+.task-text-holder {
+	margin-top: -24px;
+}
+#task-text {
+	
+}
+.deadline-holder {
+	margin-top: -24px;
+}
+.place-holder {
+	margin-top: -24px;
+}
+#priority-slider {
+	
+}
+.category-button {
+	
 }
 
 /* Header menu button edits. Needed because div is prototyped & can't be edited without JS */
@@ -137,6 +192,12 @@
 	background-image: url(../assets/svg-sprite.svg);
 }
 
+.svg-ic_close_24px {
+	background-position: 0 -240px;
+	background-repeat: no-repeat;
+	background-image: url(../assets/svg-sprite.svg);
+}
+
 /*
  * svg sprite size & margin handling
  */
@@ -149,3 +210,4 @@
 .svg-ic_warning_24px-dims { width: 24px; height: 24px; margin: 4px; }
 .svg-ic_place_24px-dims { width: 24px; height: 24px; margin: 4px; }
 .svg-ic_add_24px-dims { width: 24px; height: 24px; margin: 4px; }
+.svg-ic_close_24px-dims { width: 24px; height: 24px; margin: 4px; }

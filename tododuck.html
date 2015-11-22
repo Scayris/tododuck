@@ -54,10 +54,8 @@
 						<div class="urgency-holder">
 							3
 						</div>
-						&nbsp;
 						<p>
 							<div class="svg-ic_warning_24px svg-ic_warning_24px-dims date-warning"></div>
-							&nbsp;
 							<div class="time-holder">2.10.2015 - 4.11.2015</div>
 						</p>
 						
@@ -75,11 +73,58 @@
 					</div>
 				</div>
 				
+				<!-- FAB for adding tasks -->
 				<button id="add-task" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp">
 					<div class="svg-ic_add_24px svg-ic_add_24px-dims"></div>
 				</button>
 			</div>
 			</main>
+		</div>
+		<!-- task editor -->
+		<div id="task-editor-overlay" class=""></div>
+		<div id="task-editor" class="mdl-card mdl-shadow--8dp">
+			<div class="mdl-card__title">
+				<h6 class="mdl-card__title-text">Edit Task</h6>
+				<div class="mdl-layout-spacer"></div>
+				<label class="mdl-button mdl-js-button mdl-button--icon">
+					<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
+				</label>
+			</div>
+			<div class="mdl-card__supporting-text mdl-card--expand">
+				<div class="mdl-textfield mdl-js-textfield task-text-holder">
+					<textarea class="mdl-textfield__input" type="text" rows= "3" id="task-text" ></textarea>
+					<label class="mdl-textfield__label" for="task-text">Task text...</label>
+				</div>
+				
+				<div class="mdl-textfield mdl-js-textfield deadline-holder">
+					<input class="mdl-textfield__input" type="text" id="deadline">
+					<label class="mdl-textfield__label" for="deadline">Deadline...</label>
+				</div>
+				
+				<div class="mdl-textfield mdl-js-textfield place-holder">
+					<input class="mdl-textfield__input" type="text" id="place">
+					<label class="mdl-textfield__label" for="place">Place...</label>
+				</div>
+				
+				Task priority:
+				<input id="priority-slider" class="mdl-slider mdl-js-slider" type="range" min="1" max="8" value="3" tabindex="0">
+				
+			</div>
+			<div class="mdl-card__actions mdl-card--border">
+				<button id="category-button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					Pick a category
+				</button>
+
+				<ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="category-button">
+					<li class="mdl-menu__item">Some Action</li>
+					<li class="mdl-menu__item">Another Action</li>
+					<li class="mdl-menu__item">Yet Another Action</li>
+				</ul>
+				<div class="mdl-layout-spacer"></div>
+				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					Done
+				</a>
+			</div>
 		</div>
 	</body>
 </html>
