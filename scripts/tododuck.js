@@ -16,6 +16,8 @@ var colorSemiImportant = "#827717";
 var colorVeryImportant = "#F57C00";
 var colorUrgent = "#E53935";
 
+var pickedCat = 0;
+
 /*	On document ready
  *
  * Add event listeners, load tasks into task list
@@ -80,6 +82,34 @@ $(document).ready(function () {	//ready the page
 	$("#show-completed").click(function () {
 		showCompleted();
 	});
+	
+	//category sorting
+	$("#cat-work").click(function () {
+		showCat(0);
+	});
+	$("#cat-studies").click(function () {
+		showCat(1);
+	});
+	$("#cat-hobbies").click(function () {
+		showCat(2);
+	});
+	$("#cat-chores").click(function () {
+		showCat(3);
+	});
+	$("#cat-recreation").click(function () {
+		showCat(4);
+	});
+	$("#cat-free").click(function () {
+		showCat(5);
+	});
+	
+	//category menu click listeners
+	$("#menu-work").click(function(){ pickedCat = 0 });
+	$("#menu-studies").click(function(){ pickedCat = 1 });
+	$("#menu-hobbies").click(function(){ pickedCat = 2 });
+	$("#menu-chores").click(function(){ pickedCat = 3 });
+	$("#menu-recreation").click(function(){ pickedCat = 4 });
+	$("#menu-free").click(function(){ pickedCat = 5 });
 });
 
 
@@ -303,6 +333,7 @@ function updateTask() {
 	task.place = editor.find("#place").val();
 	task.deadline = editor.find("#deadline").val();
 	task.priority = editor.find("#priority-slider").get(0).value;
+	task.category = pickedCat;
 	
 	showTasks();
 }
@@ -323,6 +354,20 @@ function search() {
 	}
 }
 
+/*	showCat()
+ *
+ * Show which tasks fall into a given category
+ */
+function showCat(catID) {
+	for (var i in shown) {
+		if (shown[i].category == catID) {
+			shown[i].domPtr.css("opacity", "1");
+		} else {
+			shown[i].domPtr.css("opacity", "0.5");
+		}
+	}
+}
+
 /*	genDemo()
  * 
  * Fill in some typical values and tasks.
@@ -333,22 +378,26 @@ function genDemo() {
 	task.deadline = "24/11/2015";
 	task.place = "Večna Pot 113";
 	task.priority = 4;
+	task.category = 1;
 	tasks.push(task);
 	task = newTask();
 	task.text = "Rezerviraj karte za fuzbal tekmo";
 	task.deadline = "21/11/2015";
 	task.place = "Arena Stožice";
 	task.priority = 5;
+	task.category = 2;
 	tasks.push(task);
 	task = newTask();
 	task.text = "Preveri za nove epizode priljubljenih serij";
 	task.deadline = "";
 	task.priority = 1;
+	task.category = 5;
 	tasks.push(task);
 	task = newTask();
 	task.text = "Pospravi sobo";
 	task.deadline = "20/11/2015";
 	task.priority = 2;
+	task.category = 3;
 	tasks.push(task);
 	
 	for (var i in tasks) {
