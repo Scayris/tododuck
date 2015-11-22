@@ -48,10 +48,10 @@ $(document).ready(function () {	//ready the page
 		$("#task-editor").fadeIn(200);
 		$("#task-editor-overlay").fadeIn(200);
 		
-		editor.find("#editing-index").val("");
-		editor.find("#task-text").val("");
-		editor.find("#place").val("");
-		editor.find("#deadline").val("");
+		editor = $("#task-editor");
+		editor.find("#task-text").val("").parent().removeClass("is-dirty");	
+		editor.find("#place").val("").parent().removeClass("is-dirty");	
+		editor.find("#deadline").val("").parent().removeClass("is-dirty");	
 		editor.find("#priority-slider").attr("max",maxPriority);
 		editor.find("#priority-slider").get(0).MaterialSlider.change(defaultPriority);
 	});
@@ -70,7 +70,12 @@ $(document).ready(function () {	//ready the page
 		$("#task-editor").fadeOut(200);
 		$("#task-editor-overlay").fadeOut(200);
 	});
-	
+	$("#show-all").click(function () {
+		showTasks();
+	});
+	$("#show-completed").click(function () {
+		showCompleted();
+	});
 });
 
 
@@ -110,7 +115,7 @@ function showTasks() {
 	
 	var template = $("#empty-task");
 	
-	$("#task-list").empty().append(template);
+	$("#task-list").empty();
 	var current;
 	
 	var domObj;
@@ -153,15 +158,76 @@ function showTasks() {
 	}
 }
 
+function showCompleted() {
+	var template = $("#completed-task");
+	
+	$("#task-list").empty();
+	var current;
+	
+	var domObj;
+	for (var i in completed) {
+		//clone completed-task
+		domObj = template.clone();
+		current = completed[i];
+		
+		domObj.attr("id",i);
+		domObj.find(".task-content").text(current.text);
+		domObj.find(".urgency-holder").text(current.priority);
+		domObj.find(".date-holder").text(current.deadline);
+		domObj.find("#remove-link").on("click", { id:i }, function(event) { removeDoneTask(event.data.id); });
+		domObj.find("#complete-link").on("click", { id:i }, function(event) { readdTask(event.data.id); });
+		domObj.find(".urgency-holder").css("background-color", "#999");
+		domObj.find(".urgency-holder").css("margin-right", "8px");
+		
+		//make task visible
+		domObj.css("display","block");
+		completed[i].domPtr = domObj;
+		$("#task-list").append(completed[i].domPtr);
+	}
+}
+/*	removeDoneTask()
+ * 
+ */
+function removeDoneTask(id) {
+	var removing = completed.splice(id, 1);
+	removing = removing[0];
+	
+	for (var i in tasks) {
+		if (removing.origId == tasks[i].origId) {
+			tasks.splice(i, 1);
+		}
+	}
+	
+	showCompleted();
+}
+/*	readdTask()
+ * 
+ * Add a completed task back to current tasks list.
+ */
+function readdTask(id) {
+	var readding = completed.splice(id, 1);
+	readding = readding[0];
+	
+	for (var i in tasks) {
+		if (readding.origId == tasks[i].origId) {
+			tasks.splice(i, 1);
+		}
+	}
+	
+	readding.origId = taskNum;
+	taskNum++;
+	tasks.push(readding);
+	shown.push(readding);
+	
+	showCompleted();
+}
+
 /*	editTask()
  *
  * Open up task editor and load task's values into it.
  */
 function editTask(id) {
 	adding = false;
-	$("#task-editor > .mdl-card__title > .mdl-card__title-text").text("Edit task");
-	$("#task-editor").fadeIn(200);
-	$("#task-editor-overlay").fadeIn(200);
 	
 	var editor = $("#task-editor");
 	var task = shown[id];
@@ -173,6 +239,9 @@ function editTask(id) {
 	editor.find("#priority-slider").attr("max",maxPriority);
 	editor.find("#priority-slider").get(0).MaterialSlider.change(task.priority);	//needs HTML element to call change method
 	
+	$("#task-editor > .mdl-card__title > .mdl-card__title-text").text("Edit task");
+	$("#task-editor").fadeIn(200);
+	$("#task-editor-overlay").fadeIn(200);
 }
 
 /*	removeTask()
@@ -180,6 +249,7 @@ function editTask(id) {
  */
 function removeTask(id) {
 	var removing = shown.splice(id, 1);
+	removing = removing[0];
 	
 	for (var i in tasks) {
 		if (removing.origId == tasks[i].origId) {
@@ -195,8 +265,12 @@ function removeTask(id) {
  */
 function completeTask(id) {
 	var completing = shown.splice(id, 1);
-	completed.done = true;
+	completing = completing[0];
+	
+	completing.done = true;
 	completed.push(completing);
+	
+	console.log(completed);
 	
 	showTasks();
 }
@@ -254,6 +328,11 @@ function genDemo() {
 	task.deadline = "21/11/2015";
 	task.place = "Arena Stožice";
 	task.priority = 5;
+	tasks.push(task);
+	task = newTask();
+	task.text = "Preveri za nove epizode priljubljenih serij";
+	task.deadline = "";
+	task.priority = 1;
 	tasks.push(task);
 	task = newTask();
 	task.text = "Pospravi sobo";

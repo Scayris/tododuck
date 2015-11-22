@@ -36,8 +36,8 @@
 				<a class="mdl-navigation__link" href="index.html">Log Out</a>
 			</nav>
 			<nav id="macro-control" class="mdl-navigation">
-				<a class="mdl-navigation__link" href="">All</a>
-				<a class="mdl-navigation__link" href="">Completed</a>
+				<span class="mdl-navigation__link" id="show-all">All</span>
+				<span class="mdl-navigation__link" id="show-completed">Completed</span>
 			</nav>
 			<nav id="category-list" class="mdl-navigation">
 				<a class="mdl-navigation__link" href="">Work</a>
@@ -48,33 +48,50 @@
 			</div>
 			<main class="mdl-layout__content">
 			<div class="page-content">
+				<!-- Task prototypes -->
+				<div id="empty-task" class="card-task mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title mdl-card--expand task-content"></div>
+					<div class="mdl-card__actions mdl-card--border">
+						<div class="urgency-holder"></div>
+						<p>
+							<div class="svg-ic_warning_24px svg-ic_warning_24px-dims date-warning"></div>
+							<div class="date-holder"></div>
+						</p>
+						
+						<div class="mdl-layout-spacer"></div>
+						
+						<a id="maps-link" href="" target="_blank" class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_place_24px svg-ic_place_24px-dims"></div>
+						</a>
+						<label id="editor-link" class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_settings_24px svg-ic_settings_24px-dims"></div>
+						</label>
+						<label id="remove-link" class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
+						</label>
+						<label id="complete-link" class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_done_24px svg-ic_done_24px-dims"></div>
+						</label>
+					</div>
+				</div>
+				<div id="completed-task" class="card-task mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title mdl-card--expand task-content"></div>
+					<div class="mdl-card__actions mdl-card--border">
+						<div class="urgency-holder"></div>
+						<div class="date-holder"></div>
+						
+						<div class="mdl-layout-spacer"></div>
+						
+						<label id="remove-link" class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
+						</label>
+						<label id="complete-link" class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_check_circle_24px svg-ic_check_circle_24px-dims"></div>
+						</label>
+					</div>
+				</div>
 				<!-- Task list -->
 				<div id=task-list>
-					<div id="empty-task" class="card-task mdl-card mdl-shadow--2dp">
-						<div class="mdl-card__title mdl-card--expand task-content"></div>
-						<div class="mdl-card__actions mdl-card--border">
-							<div class="urgency-holder"></div>
-							<p>
-								<div class="svg-ic_warning_24px svg-ic_warning_24px-dims date-warning"></div>
-								<div class="date-holder"></div>
-							</p>
-							
-							<div class="mdl-layout-spacer"></div>
-							
-							<a id="maps-link" href="" target="_blank" class="mdl-button mdl-js-button mdl-button--icon">
-								<div class="svg-ic_place_24px svg-ic_place_24px-dims"></div>
-							</a>
-							<label id="editor-link" class="mdl-button mdl-js-button mdl-button--icon">
-								<div class="svg-ic_settings_24px svg-ic_settings_24px-dims"></div>
-							</label>
-							<label id="remove-link" class="mdl-button mdl-js-button mdl-button--icon">
-								<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
-							</label>
-							<label id="complete-link" class="mdl-button mdl-js-button mdl-button--icon">
-								<div class="svg-ic_done_24px svg-ic_done_24px-dims"></div>
-							</label>
-						</div>
-					</div>
 				</div>
 				<!-- FAB for adding tasks -->
 				<button id="add-task" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp">

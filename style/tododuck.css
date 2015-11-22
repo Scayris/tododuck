@@ -68,6 +68,9 @@
 #empty-task {
 	display: none;
 }
+#completed-task {
+	display: none;
+}
 
 /* add task FAB */
 #add-task {
