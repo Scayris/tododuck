@@ -32,6 +32,10 @@ $(document).ready(function () {	//ready the page
 	$("#fixed-header-drawer-exp").change(function() {
 		if ($("#fixed-header-drawer-exp").val() != "") {
 			search();
+		} else {
+			for (var i in shown) {
+				shown[i].domPtr.css("opacity", "1");
+			}
 		}
 	});
 	
@@ -309,7 +313,14 @@ function updateTask() {
  */
 function search() {
 	var lookingFor = $("#fixed-header-drawer-exp").val();
-	alert(lookingFor);
+	
+	for (var i in shown) {
+		if (shown[i].text.match(new RegExp(lookingFor, "i")) != null) {
+			shown[i].domPtr.css("opacity", "1");
+		} else {
+			shown[i].domPtr.css("opacity", "0.5");
+		}
+	}
 }
 
 /*	genDemo()
