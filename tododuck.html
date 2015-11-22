@@ -26,7 +26,6 @@
 					<input class="mdl-textfield__input" type="text" name="sample"
 							  id="fixed-header-drawer-exp">
 				</div>
-				</div>
 			</div>
 			</header>
 			<div class="mdl-layout__drawer">
@@ -50,36 +49,33 @@
 			<main class="mdl-layout__content">
 			<div class="page-content">
 				<!-- Task list -->
-				<div class="card-task mdl-card mdl-shadow--2dp">
-					<div class="mdl-card__title mdl-card--expand task-content">
-						Do that thing you were supposed to do.
-					</div>
-					<div class="mdl-card__actions mdl-card--border">
-						<div class="urgency-holder">
-							3
+				<div id=task-list>
+					<div id="empty-task" class="card-task mdl-card mdl-shadow--2dp">
+						<div class="mdl-card__title mdl-card--expand task-content"></div>
+						<div class="mdl-card__actions mdl-card--border">
+							<div class="urgency-holder"></div>
+							<p>
+								<div class="svg-ic_warning_24px svg-ic_warning_24px-dims date-warning"></div>
+								<div class="date-holder"></div>
+							</p>
+							
+							<div class="mdl-layout-spacer"></div>
+							
+							<a id="maps-link" href="" target="_blank" class="mdl-button mdl-js-button mdl-button--icon">
+								<div class="svg-ic_place_24px svg-ic_place_24px-dims"></div>
+							</a>
+							<label id="editor-link" class="mdl-button mdl-js-button mdl-button--icon">
+								<div class="svg-ic_settings_24px svg-ic_settings_24px-dims"></div>
+							</label>
+							<label class="mdl-button mdl-js-button mdl-button--icon">
+								<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
+							</label>
+							<label class="mdl-button mdl-js-button mdl-button--icon">
+								<div class="svg-ic_done_24px svg-ic_done_24px-dims"></div>
+							</label>
 						</div>
-						<p>
-							<div class="svg-ic_warning_24px svg-ic_warning_24px-dims date-warning"></div>
-							<div class="time-holder">2.10.2015 - 4.11.2015</div>
-						</p>
-						
-						<div class="mdl-layout-spacer"></div>
-						
-						<a href="http://maps.google.com/?q=vecna+pot+113" target="_blank" class="mdl-button mdl-js-button mdl-button--icon">
-							<div class="svg-ic_place_24px svg-ic_place_24px-dims"></div>
-						</a>
-						<label class="mdl-button mdl-js-button mdl-button--icon">
-							<div class="svg-ic_settings_24px svg-ic_settings_24px-dims"></div>
-						</label>
-						<label class="mdl-button mdl-js-button mdl-button--icon">
-							<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
-						</label>
-						<label class="mdl-button mdl-js-button mdl-button--icon">
-							<div class="svg-ic_done_24px svg-ic_done_24px-dims"></div>
-						</label>
 					</div>
 				</div>
-				
 				<!-- FAB for adding tasks -->
 				<button id="add-task" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp">
 					<div class="svg-ic_add_24px svg-ic_add_24px-dims"></div>

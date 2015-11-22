@@ -24,6 +24,10 @@ $(document).ready(function () {	//ready the page
 	$("#desired-password-2").change(function() { comparePass() });
 	
 	//registration
+	$("#registration-overlay").click(function () {
+		$("#registration").fadeOut(200);
+		$("#registration-overlay").fadeOut(200);
+	});
 	$("#cancel-registration").click(function () {
 		$("#registration").fadeOut(200);
 		$("#registration-overlay").fadeOut(200);
@@ -37,7 +41,14 @@ $(document).ready(function () {	//ready the page
 function comparePass() {
 	if ($("#desired-password").val() == $("#desired-password-2").val()) {
 		$("#pass-check").hide();
+		$("#confirm-registration").attr("disabled",false);	//enable confirm button
+		$("#confirm-registration").click(function () {		//reapply event listener
+			$("#registration").fadeOut(200);
+			$("#registration-overlay").fadeOut(200);
+		});
 	} else {
 		$("#pass-check").show();
+		$("#confirm-registration").attr("disabled",true);	//disable confirm button
+		$("#confirm-registration").off("click");			//remove event listener
 	}
 }
