@@ -125,6 +125,9 @@
 .category-button {
 	
 }
+#editing-index {
+	display: none;
+}
 
 /* Header menu button edits. Needed because div is prototyped & can't be edited without JS */
 .mdl-layout__drawer-button > .material-icons {
