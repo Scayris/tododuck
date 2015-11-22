@@ -6,7 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="./style/login.css" type="text/css">
 		<link rel="stylesheet" href="./style/material.min.css" type="text/css">
+		<script src="./scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
 		<script src="./scripts/material.min.js" type="text/javascript"></script>
+		<script src="./scripts/login.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="login-card mdl-card mdl-shadow--2dp">
@@ -23,7 +25,7 @@
 				</div>
 			</form>
 			<div class="mdl-card__actions">
-				<a class="login-buttons mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				<a id="register-button" class="login-buttons mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 					Register
 				</a>
 				<a id="login" class="login-buttons mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect"
@@ -37,7 +39,7 @@
 			<div class="mdl-card__title">
 				<h6 class="mdl-card__title-text">Register</h6>
 				<div class="mdl-layout-spacer"></div>
-				<label class="mdl-button mdl-js-button mdl-button--icon">
+				<label id="cancel-registration" class="mdl-button mdl-js-button mdl-button--icon">
 					<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
 				</label>
 			</div>
@@ -71,7 +73,7 @@
 			</div>
 			<div class="mdl-card__actions mdl-card--border">
 				<div class="mdl-layout-spacer"></div>
-				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				<a id="confirm-registration"class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 					Confirm
 				</a>
 			</div>

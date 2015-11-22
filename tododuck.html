@@ -36,6 +36,10 @@
 				<a class="mdl-navigation__link" href="">Preferences</a>
 				<a class="mdl-navigation__link" href="index.html">Log Out</a>
 			</nav>
+			<nav id="macro-control" class="mdl-navigation">
+				<a class="mdl-navigation__link" href="">All</a>
+				<a class="mdl-navigation__link" href="">Completed</a>
+			</nav>
 			<nav id="category-list" class="mdl-navigation">
 				<a class="mdl-navigation__link" href="">Work</a>
 				<a class="mdl-navigation__link" href="">Studies</a>
@@ -68,6 +72,9 @@
 							<div class="svg-ic_settings_24px svg-ic_settings_24px-dims"></div>
 						</label>
 						<label class="mdl-button mdl-js-button mdl-button--icon">
+							<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
+						</label>
+						<label class="mdl-button mdl-js-button mdl-button--icon">
 							<div class="svg-ic_done_24px svg-ic_done_24px-dims"></div>
 						</label>
 					</div>
@@ -86,7 +93,7 @@
 			<div class="mdl-card__title">
 				<h6 class="mdl-card__title-text">Edit Task</h6>
 				<div class="mdl-layout-spacer"></div>
-				<label class="mdl-button mdl-js-button mdl-button--icon">
+				<label id="close-editor" class="mdl-button mdl-js-button mdl-button--icon">
 					<div class="svg-ic_close_24px svg-ic_close_24px-dims"></div>
 				</label>
 			</div>
@@ -121,7 +128,7 @@
 					<li class="mdl-menu__item">Yet Another Action</li>
 				</ul>
 				<div class="mdl-layout-spacer"></div>
-				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				<a id="done-editing" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 					Done
 				</a>
 			</div>

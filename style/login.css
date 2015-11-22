@@ -62,13 +62,11 @@ body {
 #registration > .mdl-card__actions {
 	display: flex;
 }
-#pass-check {
+#pass-check { /* ˇyes, both only have this 1 same line, but we need IDs to display or hide each one*/
 	color: #E53935;
-	/*visibility: hidden;*/
 }
 #mail-check {
 	color: #E53935;
-	/*visibility: hidden;*/
 }
 
 /*
